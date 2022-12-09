@@ -1,4 +1,4 @@
-import Head from "next/head";
+import Head from 'next/head';
 
 export default function Home() {
   return (
@@ -12,9 +12,7 @@ export default function Home() {
         render a product here.
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        footer
-      </footer>
+      <footer className="flex items-center justify-center w-full h-24 border-t">footer</footer>
     </div>
   );
 }
