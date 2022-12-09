@@ -1,35 +1,8 @@
 import Head from 'next/head';
-import { gql } from 'graphql-request';
-import shopify from '../utils/shopify';
 import Image from 'next/image';
 import Link from 'next/link';
-
-const getProductsQuery = gql`
-  query {
-    products(first: 10) {
-      nodes {
-        id
-        handle
-        title
-        compareAtPriceRange {
-          maxVariantPrice {
-            amount
-          }
-          minVariantPrice {
-            amount
-          }
-        }
-        featuredImage {
-          url
-          width
-          height
-          altText
-        }
-        description
-      }
-    }
-  }
-`;
+import shopify from '../utils/shopify';
+import { getProductsQuery } from '../requests/getProductsQuery';
 
 export const getStaticProps = async () => {
   const data = await shopify(getProductsQuery, {});
@@ -42,7 +15,7 @@ export const getStaticProps = async () => {
 export default function Home({ products }) {
   console.log('products', products);
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -70,8 +43,6 @@ export default function Home({ products }) {
             </div>
           ))}
       </main>
-
-      <footer className="flex items-center justify-center w-full h-24 border-t">footer</footer>
-    </div>
+    </>
   );
 }
