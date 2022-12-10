@@ -23,6 +23,14 @@ export const getProductQuery = gql`
         width
         height
       }
+      images(first: 5) {
+        nodes {
+          url
+          altText
+          width
+          height
+        }
+      }
       variants(first: 10) {
         edges {
           node {

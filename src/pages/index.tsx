@@ -21,7 +21,7 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="grid grid-cols-5 gap-4 px-20 text-center">
+      <div className="grid grid-cols-5 gap-4 text-center">
         {products &&
           products.map((product) => (
             <div key={product.id} className="bg-blue-300 p-4">
@@ -42,7 +42,7 @@ export default function Home({ products }) {
               </Link>
             </div>
           ))}
-      </main>
+      </div>
     </>
   );
 }

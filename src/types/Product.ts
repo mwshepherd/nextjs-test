@@ -8,6 +8,14 @@ export type Product = {
   };
   handle: string;
   id: string;
+  images: {
+    nodes: {
+      url: string;
+      altText: string | null;
+      width: number;
+      height: number;
+    }[];
+  };
   priceRange: {
     minVariantPrice: {
       amount: string;
