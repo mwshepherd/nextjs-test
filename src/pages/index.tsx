@@ -31,9 +31,7 @@ export default function Home({ products }) {
                     src={product.featuredImage.url}
                     fill
                     className="object-cover object-top"
-                    sizes="(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     alt={product.featuredImage.alt || 'Shopify Product'}
                   />
                 </div>
