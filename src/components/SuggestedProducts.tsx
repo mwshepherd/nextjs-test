@@ -6,11 +6,12 @@ import { useRef } from 'react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
 
 const SuggestedProducts = ({ products }) => {
   return (
     <Container>
-      <div className="pt-40 flex flex-col items-center justify-center gap-8">
+      <div className="pt-10 md:pt-40 flex flex-col items-center justify-center gap-8">
         <div className="w-full border-t" />
         <h2 className="text-sm font-bold uppercase">You May Also Like</h2>
         <div className="w-full border-t" />
@@ -43,15 +44,11 @@ const SuggestedProducts = ({ products }) => {
                 <ProductCard product={product} />
               </SwiperSlide>
             ))}
-            <div className="prev-btn flex justify-center items-center bg-black w-10 h-10 absolute top-[50%] left-4 translate-y-[-100%] z-10 cursor-pointer">
-              <svg width={10} height={18} viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.2 17l-8-8 8-8" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="prev-btn hidden md:flex justify-center items-center bg-black w-10 h-10 absolute top-[50%] left-4 translate-y-[-100%] z-10 cursor-pointer">
+              <ChevronLeftIcon className="w-4 text-white" />
             </div>
-            <div className="next-btn flex justify-center items-center bg-black w-10 h-10 absolute top-[50%] right-4 translate-y-[-100%] z-10 cursor-pointer">
-              <svg width={10} height={18} viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M.6 17l8-8-8-8" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
+            <div className="next-btn hidden md:flex justify-center items-center bg-black w-10 h-10 absolute top-[50%] right-4 translate-y-[-100%] z-10 cursor-pointer">
+              <ChevronRightIcon className="w-4 text-white" />
             </div>
           </Swiper>
         </div>

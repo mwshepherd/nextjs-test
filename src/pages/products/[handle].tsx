@@ -99,7 +99,7 @@ const ProductPage = ({ product, productsByTag }: { product: Product; productsByT
               ))}
             </Swiper>
           </div>
-          <div className="px-4 md:px-0 md:pr-8 md:pl-20 pt-16">
+          <div className="px-4 md:px-0 md:pr-8 md:pl-20 pt-4 md:pt-16">
             <div className="sticky top-20">
               <h2 className="text-2xl uppercase font-bold mb-2">{product.title}</h2>
               <p className="text-lg font-light">${product.priceRange.minVariantPrice.amount}</p>
