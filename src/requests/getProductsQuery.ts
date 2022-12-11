@@ -2,7 +2,7 @@ import { gql } from 'graphql-request';
 
 export const getProductsQuery = gql`
   query {
-    products(first: 10) {
+    products(first: 12) {
       nodes {
         id
         handle

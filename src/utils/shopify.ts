@@ -6,6 +6,7 @@ const shopify = async (query, variables) => {
 
   const graphQLClient = new GraphQLClient(endpoint, {
     headers: {
+      'Content-Type': 'application/json',
       'X-Shopify-Storefront-Access-Token': token,
     },
   });
