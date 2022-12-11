@@ -10,6 +10,7 @@ export const getProductQuery = gql`
         description
       }
       title
+      tags
       descriptionHtml
       priceRange {
         minVariantPrice {

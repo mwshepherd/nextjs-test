@@ -5,6 +5,7 @@ import Container from '../../components/Container';
 import TextDivider from '../../components/TextDivider';
 import ImageWithText from '../../components/ImageWithText';
 import ProductInfo from '../../components/ProductInfo';
+import SuggestedProducts from '../../components/SuggestedProducts';
 import { getProductQuery } from '../../requests/getProductQuery';
 import { Product } from '../../types/Product';
 import { Pagination } from 'swiper';
@@ -12,6 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { ChangeEvent, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import { createCartMutation, updateCartMutation } from '../../requests/cartMutations';
+import { getProductsByTagQuery } from '../../requests/getProductsByTag';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -27,14 +29,20 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const tag = {
+    tag: `tag:${data.product.tags[0]}`,
+  };
+  const productsByTag = await shopify(getProductsByTagQuery, tag);
+
   return {
     props: {
       product: data.product,
+      productsByTag: productsByTag.products.nodes,
     },
   };
 };
 
-const ProductPage = ({ product }: { product: Product }) => {
+const ProductPage = ({ product, productsByTag }: { product: Product; productsByTag: any }) => {
   const [quantity, setQuantity] = useState(1);
 
   const getLines = () => [
@@ -89,6 +97,7 @@ const ProductPage = ({ product }: { product: Product }) => {
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       alt={image.altText || 'Shopify Product Image'}
+                      priority
                     />
                   </div>
                 </SwiperSlide>
@@ -118,6 +127,7 @@ const ProductPage = ({ product }: { product: Product }) => {
           </div>
         </div>
       </Container>
+      {productsByTag.length > 0 && <SuggestedProducts products={productsByTag} />}
       <TextDivider />
       <ImageWithText productImage={product.featuredImage} />
       <ImageWithText productImage={product.featuredImage} reverse />

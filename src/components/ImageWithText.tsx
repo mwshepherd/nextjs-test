@@ -4,7 +4,7 @@ import Container from './Container';
 
 const ImageWithText = ({ productImage, reverse }: { productImage: any; reverse?: boolean }) => {
   return (
-    <div className="py-10 md:py-20">
+    <div className="pt-10 md:pt-20">
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-12">
           <div className={clsx('relative w-full pt-[100%]', reverse && 'md:order-2')}>
