@@ -2,7 +2,7 @@ import Container from './Container';
 
 const TextDivider = () => {
   return (
-    <div className="py-20 flex justify-center items-center">
+    <div className="py-10 md:py-20 flex justify-center items-center">
       <div className="w-full bg-gray-800 py-12 px-8">
         <Container>
           <p className="text-white text-center">

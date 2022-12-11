@@ -1,20 +1,21 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import shopify from '../../utils/shopify';
+import Container from '../../components/Container';
+import TextDivider from '../../components/TextDivider';
+import ImageWithText from '../../components/ImageWithText';
+import ProductInfo from '../../components/ProductInfo';
 import { getProductQuery } from '../../requests/getProductQuery';
 import { Product } from '../../types/Product';
 import { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ChangeEvent, useState } from 'react';
+import { GetServerSideProps } from 'next';
 import { createCartMutation, updateCartMutation } from '../../requests/cartMutations';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Container from '../../components/Container';
-import TextDivider from '../../components/TextDivider';
-import ImageWithText from '../../components/ImageWithText';
-import ProductInfo from '../../components/ProductInfo';
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context) => {
   const { handle } = context.query;
 
   const variables = { handle };
@@ -57,7 +58,7 @@ const ProductPage = ({ product }: { product: Product }) => {
           lines: getLines(),
         },
       };
-      // Attempted to crate a cart but endpoint not working currently
+      // Attempted to crate a cart but endpoint currently not working
       // const data = await shopify(createCartMutation, variables);
       // cartId = data.cartCreate.cart.id;
       // sessionStorage.setItem('cartId', cartId);

@@ -21,7 +21,6 @@ export const getProductsQuery = gql`
           height
           altText
         }
-        description
       }
     }
   }
