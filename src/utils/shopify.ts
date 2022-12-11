@@ -13,4 +13,5 @@ const shopify = async (query, variables) => {
 
   return await graphQLClient.request(query, variables);
 };
+
 export default shopify;

@@ -12,7 +12,7 @@ import { Product } from '../types/Product';
 const SuggestedProducts = ({ products }: { products: Product[] }) => {
   return (
     <Container>
-      <div className="pt-10 md:pt-40 flex flex-col items-center justify-center gap-8">
+      <div className="pt-10 md:pt-20 flex flex-col items-center justify-center gap-8">
         <div className="w-full border-t" />
         <h2 className="text-sm font-bold uppercase">You May Also Like</h2>
         <div className="w-full border-t" />

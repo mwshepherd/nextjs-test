@@ -36,13 +36,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      product: data.product,
-      productsByTag: productsByTag.products.nodes,
+      product: data?.product,
+      productsByTag: productsByTag?.products.nodes,
     },
   };
 };
 
-const ProductPage = ({ product, productsByTag }: { product: Product; productsByTag: any }) => {
+const ProductPage = ({ product, productsByTag }: { product: Product; productsByTag: Product[] }) => {
   const [quantity, setQuantity] = useState(1);
 
   const getLines = () => [
