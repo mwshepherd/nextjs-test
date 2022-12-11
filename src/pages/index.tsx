@@ -6,6 +6,7 @@ import Container from '../components/Container';
 import { getProductsQuery } from '../requests/getProductsQuery';
 import { GetStaticProps } from 'next';
 import { Products } from '../types/Products';
+import { Product } from '../types/Product';
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = await shopify(getProductsQuery, {});
@@ -27,7 +28,7 @@ export default function Home({ products }: { products: Products }) {
         <div className="px-8 2xl:px-0 py-10">
           <h2 className="text-2xl text-center uppercase font-bold pb-8">Our Collection</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-center">
-            {products && products.map((product) => <ProductCard key={product.id} product={product} />)}
+            {products && products.map((product: Product) => <ProductCard key={product.id} product={product} />)}
           </div>
         </div>
       </Container>
