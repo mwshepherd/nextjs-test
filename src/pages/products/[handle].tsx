@@ -44,6 +44,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const ProductPage = ({ product, productsByTag }: { product: Product; productsByTag: any }) => {
   const [quantity, setQuantity] = useState(1);
+  console.log('product', product);
 
   const getLines = () => [
     {
@@ -81,13 +82,7 @@ const ProductPage = ({ product, productsByTag }: { product: Product; productsByT
         </Head>
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-8">
           <div>
-            <Swiper
-              modules={[Pagination]}
-              spaceBetween={50}
-              slidesPerView={1}
-              loop
-              pagination={{ el: '.pagination-el', clickable: true }}
-            >
+            <Swiper modules={[Pagination]} spaceBetween={50} slidesPerView={1} loop pagination={{ clickable: true }}>
               {product.images.nodes.map((image, i) => (
                 <SwiperSlide key={i}>
                   <div className="relative w-full pt-[100%]">
@@ -102,23 +97,28 @@ const ProductPage = ({ product, productsByTag }: { product: Product; productsByT
                   </div>
                 </SwiperSlide>
               ))}
-              <div className="pagination-el flex justify-center py-4" />
             </Swiper>
           </div>
-          <div className="px-4 md:px-0 md:pr-8">
-            <div className="sticky top-14 pt-8">
-              <h2 className="text-3xl uppercase font-bold">{product.title}</h2>
-              <p className="text-2xl">${product.priceRange.minVariantPrice.amount}</p>
-              <div className="grid grid-cols-2 gap-2 my-8">
-                <input
-                  type="number"
-                  className="border p-2"
-                  min="1"
-                  value={quantity}
-                  onChange={(e: ChangeEvent<HTMLInputElement>) => setQuantity(parseInt(e.target.value))}
-                />
-                <button onClick={handleAddToCart} className="bg-gray-800 text-white p-2 w-full">
+          <div className="px-4 md:px-0 md:pr-8 md:pl-20 pt-16">
+            <div className="sticky top-20">
+              <h2 className="text-2xl uppercase font-bold mb-2">{product.title}</h2>
+              <p className="text-lg font-light">${product.priceRange.minVariantPrice.amount}</p>
+              <div className="flex flex-col items-start gap-4 py-8">
+                <div className="flex gap-4 items-center">
+                  <label className="font-bold">Qty</label>
+                  <input
+                    type="number"
+                    className="border font-bold p-2 w-20 text-center focus:outline-none caret-transparent"
+                    min="1"
+                    value={quantity}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => setQuantity(parseInt(e.target.value))}
+                  />
+                </div>
+                <button onClick={handleAddToCart} className="border border-black p-2 w-full uppercase">
                   Add to cart
+                </button>
+                <button onClick={handleAddToCart} className="bg-black text-white p-2 w-full uppercase">
+                  Buy now
                 </button>
               </div>
 
@@ -128,8 +128,8 @@ const ProductPage = ({ product, productsByTag }: { product: Product; productsByT
         </div>
       </Container>
       {productsByTag.length > 0 && <SuggestedProducts products={productsByTag} />}
-      <TextDivider />
       <ImageWithText productImage={product.featuredImage} />
+      <TextDivider />
       <ImageWithText productImage={product.featuredImage} reverse />
     </>
   );

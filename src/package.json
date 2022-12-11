@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "v1",
     "clsx": "^1.2.1",
     "graphql": "^16.6.0",
     "graphql-request": "^5.0.0",

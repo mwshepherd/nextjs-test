@@ -6,7 +6,7 @@ const ImageWithText = ({ productImage, reverse }: { productImage: any; reverse?:
   return (
     <div className="pt-10 md:pt-20">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 px-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
           <div className={clsx('relative w-full pt-[100%]', reverse && 'md:order-2')}>
             <Image
               className="object-cover object-top"
@@ -16,7 +16,7 @@ const ImageWithText = ({ productImage, reverse }: { productImage: any; reverse?:
               alt={productImage.altText || 'Shopify Product Image'}
             />
           </div>
-          <div className="flex flex-col justify-center items-start gap-8">
+          <div className="flex flex-col justify-center items-start gap-8 pl-8 pr-16 text-sm">
             <h4 className="font-bold uppercase">Product Information</h4>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et

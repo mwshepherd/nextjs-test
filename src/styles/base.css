@@ -3,17 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   body {
     @apply font-poppins font-light;
   }
 }
 
-.product-description h4 {
-  @apply text-lg font-bold;
+.product-description {
+  @apply text-sm;
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-     @apply bg-gray-800
+  @apply bg-black;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  opacity: 1;
 }

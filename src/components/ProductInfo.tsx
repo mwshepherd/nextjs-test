@@ -10,28 +10,19 @@ const ProductInfo = ({ productDescription }) => {
         <ul className="grid grid-cols-3">
           <button
             onClick={() => setTab(0)}
-            className={clsx(
-              'font-light text-center text-white p-2 hover:bg-gray-800',
-              tab === 0 ? 'bg-gray-800' : 'bg-gray-400'
-            )}
+            className={clsx('font-light text-center text-black p-2', tab === 0 ? 'border-b border-black' : 'border-b')}
           >
             Description
           </button>
           <button
             onClick={() => setTab(1)}
-            className={clsx(
-              'font-light text-center text-white p-2 hover:bg-gray-800',
-              tab === 1 ? 'bg-gray-800' : 'bg-gray-400'
-            )}
+            className={clsx('font-light text-center text-black p-2', tab === 1 ? 'border-b border-black' : 'border-b')}
           >
             Shipping
           </button>
           <button
             onClick={() => setTab(2)}
-            className={clsx(
-              'font-light text-center text-white p-2 hover:bg-gray-800',
-              tab === 2 ? 'bg-gray-800' : 'bg-gray-400'
-            )}
+            className={clsx('font-light text-center text-black p-2', tab === 2 ? 'border-b border-black' : 'border-b')}
           >
             Extra Info
           </button>
