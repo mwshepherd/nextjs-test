@@ -1,5 +1,3 @@
-import Container from './Container';
-
 const TextDivider = () => {
   return (
     <div className="pt-10 md:pt-20 flex justify-center items-center">

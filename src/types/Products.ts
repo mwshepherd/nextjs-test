@@ -1,12 +1,10 @@
 import { FeaturedImage } from './Product';
 
 export type Products = {
-  compareAtPriceRange: {
-    maxVariantPrice: {
-      amount: string;
-    };
+  priceRange: {
     minVariantPrice: {
       amount: string;
+      currencyCode: string;
     };
   };
   featuredImage: FeaturedImage;

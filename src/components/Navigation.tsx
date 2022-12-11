@@ -8,14 +8,14 @@ const Navigation = () => {
         <div className="flex-1 flex items-center md:hidden">
           <MenuIcon className="w-4" />
         </div>
-        <Link className="md:flex-1" href="/">
-          <h2 className="text-2xl font-bold uppercase">Store Name</h2>
-        </Link>
+        <div className="md:flex-1 flex">
+          <Link href="/">
+            <h2 className="text-2xl font-bold uppercase">Store Name</h2>
+          </Link>
+        </div>
         <nav className="hidden md:flex items-center justify-center">
           <ul className="flex justify-center items-center gap-4 text-xs uppercase">
-            <li>
-              <Link href="/">Products</Link>
-            </li>
+            <li>Products</li>
             <li>Collections</li>
             <li>Trends</li>
             <li>About Us</li>

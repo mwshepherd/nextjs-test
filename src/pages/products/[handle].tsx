@@ -44,7 +44,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
 const ProductPage = ({ product, productsByTag }: { product: Product; productsByTag: any }) => {
   const [quantity, setQuantity] = useState(1);
-  console.log('product', product);
 
   const getLines = () => [
     {
@@ -103,7 +102,7 @@ const ProductPage = ({ product, productsByTag }: { product: Product; productsByT
             <div className="sticky top-20">
               <h2 className="text-2xl uppercase font-bold mb-2">{product.title}</h2>
               <p className="text-lg font-light">${product.priceRange.minVariantPrice.amount}</p>
-              <div className="flex flex-col items-start gap-4 py-8">
+              <div className="flex flex-col items-start gap-4 pt-4 pb-8">
                 <div className="flex gap-4 items-center">
                   <label className="font-bold">Qty</label>
                   <input

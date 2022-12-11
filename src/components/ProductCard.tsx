@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { Product } from '../types/Product';
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product }: { product: Product }) => {
   return (
     <Link href={`/products/${product.handle}`}>
       <div className="relative pt-[100%] overflow-hidden">
@@ -16,7 +17,7 @@ const ProductCard = ({ product }) => {
       </div>
       <div className="flex flex-col justify-center py-4 text-center">
         <h2 className="text-sm font-bold uppercase">{product.title}</h2>
-        <p>${product.compareAtPriceRange.maxVariantPrice.amount}</p>
+        <p>${product.priceRange?.minVariantPrice.amount}</p>
       </div>
     </Link>
   );

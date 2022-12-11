@@ -7,8 +7,9 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/outline';
+import { Product } from '../types/Product';
 
-const SuggestedProducts = ({ products }) => {
+const SuggestedProducts = ({ products }: { products: Product[] }) => {
   return (
     <Container>
       <div className="pt-10 md:pt-40 flex flex-col items-center justify-center gap-8">

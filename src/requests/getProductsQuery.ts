@@ -7,12 +7,10 @@ export const getProductsQuery = gql`
         id
         handle
         title
-        compareAtPriceRange {
-          maxVariantPrice {
-            amount
-          }
+        priceRange {
           minVariantPrice {
             amount
+            currencyCode
           }
         }
         featuredImage {

@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { useState } from 'react';
 
-const ProductInfo = ({ productDescription }) => {
+const ProductInfo = ({ productDescription }: { productDescription: string }) => {
   const [tab, setTab] = useState(0);
 
   return (

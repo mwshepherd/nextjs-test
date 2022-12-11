@@ -2,7 +2,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Container from './Container';
 
-const ImageWithText = ({ productImage, reverse }: { productImage: any; reverse?: boolean }) => {
+const ImageWithText = ({
+  productImage,
+  reverse,
+}: {
+  productImage: { url: string; altText: string };
+  reverse?: boolean;
+}) => {
   return (
     <div className="pt-10 md:pt-20">
       <Container>
